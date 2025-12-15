@@ -5,15 +5,15 @@ public class DangerousTileScript : MonoBehaviour
     [SerializeField] float randomTimeLimit;
     [SerializeField] float ReppetitiveTime;
 
-    private Color actualColor; 
-    [SerializeField] bool Danger = false; 
+    [SerializeField] Color actualColor;
+    [SerializeField] bool Danger = false;
 
     private SpriteRenderer rend;
 
     void Start()
     {
         rend = GetComponent<SpriteRenderer>();
-        randomTimeLimit =  Random.Range(1f, 5f);
+        randomTimeLimit = Random.Range(0.5f, 3f);
     }
 
     void Update()
@@ -32,10 +32,10 @@ public class DangerousTileScript : MonoBehaviour
         if (ReppetitiveTime > randomTimeLimit)
         {
             ReppetitiveTime = 0;
-            rend.material.color = actualColor;
+            rend.color = actualColor;
             Danger = !Danger;
 
         }
-        
+
     }
 }

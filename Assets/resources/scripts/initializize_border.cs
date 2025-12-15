@@ -17,10 +17,7 @@ public class initializize_border : MonoBehaviour
         InstantiateBorderLoop();
     }
  
-    void Update()
-    {
-        
-    }
+
 
     public void InstantiateBorderLoop()
     {
