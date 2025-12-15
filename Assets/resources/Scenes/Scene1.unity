@@ -203,6 +203,7 @@ MonoBehaviour:
   Limit: 0
   AdditionalLimit: 0
   axis: 0
+  CaseYDone: {fileID: 0}
 --- !u!114 &400953069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,12 +217,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReferencePlayerScript
   StartMoving: 0
-  Done: 1
+  Done: 0
   SpeedX: 7
   SpeedY: 0
   Limit: 3.612249
   AdditionalLimit: 5.204083
   axis: 0
+  CaseYDone: {fileID: 669953270}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,7 +331,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 7.16
+  orthographic size: 5.01
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -454,7 +456,7 @@ MonoBehaviour:
     CustomLookAtTarget: 0
   Lens:
     FieldOfView: 34
-    OrthographicSize: 7.16
+    OrthographicSize: 5.01
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -612,8 +614,9 @@ GameObject:
   m_Component:
   - component: {fileID: 669953268}
   - component: {fileID: 669953269}
+  - component: {fileID: 669953270}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -628,7 +631,7 @@ Transform:
   m_GameObject: {fileID: 669953267}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -3.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -692,6 +695,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &669953270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669953267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ae96c9682072e22fa19dd9ac7ab44ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ReferencePlayerScript
+  StartMoving: 0
+  Done: 1
+  SpeedX: 0
+  SpeedY: 12
+  Limit: 3.8
+  AdditionalLimit: 0
+  axis: 1
+  CaseYDone: {fileID: 669953270}
 --- !u!1 &732187159
 GameObject:
   m_ObjectHideFlags: 0
