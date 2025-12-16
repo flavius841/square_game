@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class PlayerCrashScript : MonoBehaviour
 {
-    public GameObject Player;
+    [SerializeField] GameObject Player;
+    [SerializeField] bool Crashed;
+    [SerializeField] float DectectingDistance;
+
     void Start()
     {
 
@@ -13,20 +16,14 @@ public class PlayerCrashScript : MonoBehaviour
 
     }
 
-    public void PlayerDetector(GameObject Player, float Adjustment2)
+    public void PlayerDetector()
     {
-        for (int i = 0; i < Player.transform.childCount; i++)
+        for (int i = 0; i < transform.childCount; i++)
         {
             //print(Vector3.Distance(Sphere.transform.position, Player1.transform.GetChild(i).position) + "   " + Player1.transform.GetChild(i).name);
-            if (Vector3.Distance(Sphere.transform.position, Player.transform.GetChild(i).position) < DectectingDistance)
+            if (Vector3.Distance(Player.transform.position, transform.GetChild(i).position) < DectectingDistance)
             {
-                Z_Rot = 180 - Z_Rot - RotationFactor * int.Parse(Player.transform.GetChild(i).name);
-
-                Sphere.transform.position = new Vector3(Sphere.transform.position.x + Adjustment2, Sphere.transform.position.y,
-                 Sphere.transform.position.z);
-
-                Score++;
-
+                Crashed = true;
             }
         }
     }

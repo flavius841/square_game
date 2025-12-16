@@ -10,17 +10,18 @@ public enum Axis
 public class ReferencePlayerScript : MonoBehaviour
 {
     [SerializeField] bool StartMoving;
-    [SerializeField] bool Done;
+    public bool Done;
 
     [SerializeField] float SpeedX;
     [SerializeField] float SpeedY;
     [SerializeField] float Limit;
     [SerializeField] float AdditionalLimit;
     [SerializeField] Axis axis;
+    [HideInInspector]
     public ReferencePlayerScript CaseYDone;
     void Start()
     {
-
+        //CaseYDone = playerInstance;
     }
 
     void Update()
@@ -78,4 +79,5 @@ public class ReferencePlayerScript : MonoBehaviour
         }
 
     }
+
 }
