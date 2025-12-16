@@ -2,6 +2,8 @@ using UnityEngine;
 
 using UnityEngine.InputSystem;
 
+using TMPro;
+
 
 
 public enum Axis
@@ -35,6 +37,8 @@ public class Test : MonoBehaviour
     [SerializeField] float AdditionalLimit;
 
     [SerializeField] Axis axis;
+    [SerializeField] TextMeshProUGUI ScoreText;
+    [SerializeField] int Score;
 
 
     public Test CaseYDone;
@@ -72,6 +76,10 @@ public class Test : MonoBehaviour
                 case Axis.X:
 
                     Limit += AdditionalLimit;
+
+                    Score++;
+
+                    ScoreText.text = "Score " + Score.ToString();
 
                     break;
 
