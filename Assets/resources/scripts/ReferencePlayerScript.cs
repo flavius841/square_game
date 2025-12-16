@@ -1,83 +1,85 @@
-using UnityEngine;
-using UnityEngine.InputSystem;
+// using UnityEngine;
+// using UnityEngine.InputSystem;
 
-public enum Axis
-{
-    X,
-    Y
-}
+// public enum Axis
+// {
+//     X,
+//     Y
+// }
 
-public class ReferencePlayerScript : MonoBehaviour
-{
-    [SerializeField] bool StartMoving;
-    public bool Done;
+// public class ReferencePlayerScript : MonoBehaviour
+// {
+//     [SerializeField] bool StartMoving;
+//     public bool Done;
 
-    [SerializeField] float SpeedX;
-    [SerializeField] float SpeedY;
-    [SerializeField] float Limit;
-    [SerializeField] float AdditionalLimit;
-    [SerializeField] Axis axis;
-    [HideInInspector]
-    public ReferencePlayerScript CaseYDone;
-    void Start()
-    {
-        //CaseYDone = playerInstance;
-    }
+//     [SerializeField] float SpeedX;
+//     [SerializeField] float SpeedY;
+//     [SerializeField] float Limit;
+//     [SerializeField] float AdditionalLimit;
+//     [SerializeField] Axis axis;
+//     public ReferencePlayerScript CaseYDone;
+//     void Start()
+//     {
+//         //CaseYDone = playerInstance;
+//     }
 
-    void Update()
-    {
-        if (Keyboard.current.spaceKey.wasPressedThisFrame && (Done || CaseYDone.Done))
-        {
-            StartMoving = true;
-            Done = false;
+//     void Update()
+//     {
+//         if (Keyboard.current.spaceKey.wasPressedThisFrame && (Done || CaseYDone.Done))
+//         {
+//             StartMoving = true;
+//             Done = false;
 
-            switch (axis)
-            {
-                case Axis.X:
-                    Limit += AdditionalLimit;
-                    break;
+//             switch (axis)
+//             {
+//                 case Axis.X:
+//                     Limit += AdditionalLimit;
+//                     Limit = 5;
+//                     break;
 
-                case Axis.Y:
-                    Limit = -Limit;
-                    SpeedY = -SpeedY;
-                    break;
+//                 case Axis.Y:
+//                     Limit = -Limit;
+//                     SpeedY = -SpeedY;
+//                     break;
 
-            }
-        }
+//             }
+//         }
 
-        if (StartMoving)
-        {
-            Move();
+//         if (StartMoving)
+//         {
+//             Move();
 
-        }
+//         }
+
+//         print(CaseYDone.Done);
 
 
-    }
+//     }
 
-    public void Move()
-    {
-        transform.position = transform.position + new Vector3(SpeedX * Time.deltaTime, SpeedY * Time.deltaTime, 0);
+//     public void Move()
+//     {
+//         transform.position = transform.position + new Vector3(SpeedX * Time.deltaTime, SpeedY * Time.deltaTime, 0);
 
-        switch (axis)
-        {
-            case Axis.X:
-                if (transform.position.x >= Limit - 0.1f)
-                {
-                    StartMoving = false;
-                }
-                break;
+//         switch (axis)
+//         {
+//             case Axis.X:
+//                 if (transform.position.x >= Limit - 0.1f)
+//                 {
+//                     StartMoving = false;
+//                 }
+//                 break;
 
-            case Axis.Y:
-                if ((transform.position.y >= Limit - 0.1f && Limit > 0) || (transform.position.y <= Limit + 0.1f && Limit < 0))
-                {
-                    StartMoving = false;
-                    Done = true;
-                }
+//             case Axis.Y:
+//                 if ((transform.position.y >= Limit - 0.1f && Limit > 0) || (transform.position.y <= Limit + 0.1f && Limit < 0))
+//                 {
+//                     StartMoving = false;
+//                     Done = true;
+//                 }
 
-                break;
+//                 break;
 
-        }
+//         }
 
-    }
+//     }
 
-}
+// }
