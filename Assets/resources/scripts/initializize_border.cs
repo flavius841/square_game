@@ -1,5 +1,15 @@
 using UnityEngine;
 
+public enum Location
+
+{
+
+    Up,
+
+    Down
+
+}
+
 public class initializize_border : MonoBehaviour
 {
     [SerializeField] GameObject PositionReference;
@@ -10,13 +20,16 @@ public class initializize_border : MonoBehaviour
     [SerializeField] GameObject Tile;
     [SerializeField] float ScaleX;
     [SerializeField] string Type;
+    private SpriteRenderer rend;
+    [SerializeField] Color GreenColor;
+    [SerializeField] Location location;
 
 
     void Start()
     {
         InstantiateBorderLoop();
     }
- 
+
 
 
     public void InstantiateBorderLoop()
@@ -36,6 +49,27 @@ public class initializize_border : MonoBehaviour
           PositionReference.transform.position.y);
         NewSquare.transform.name = ID.ToString() + Type;
         NewSquare.transform.SetParent(Border.transform);
+        rend = NewSquare.GetComponent<SpriteRenderer>();
+
+        switch (location)
+        {
+            case Location.Up:
+                break;
+
+
+
+            case Location.Down:
+
+                if (ID % 2 == 0)
+                {
+                    rend.color = GreenColor;
+                }
+
+                break;
+
+
+
+        }
 
 
 
