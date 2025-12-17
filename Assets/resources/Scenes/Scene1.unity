@@ -1483,7 +1483,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCrashScript
   Parent: {fileID: 778381263}
   Crashed: 0
+  Blink: 0
   DectectingDistance: 2.2
+  Life3: {fileID: 655241115}
+  Life2: {fileID: 757782916}
+  Life1: {fileID: 351224745}
+  Lifes: 3
+  Timer: 0
+  Speed: 3
+  MinAlpha: 0
+  MaxAlpha: 1
 --- !u!1 &1136946485
 GameObject:
   m_ObjectHideFlags: 0
