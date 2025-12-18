@@ -18,7 +18,7 @@ public class PlayerCrashScript : MonoBehaviour
     [SerializeField] float MinAlpha = 0f;
     [SerializeField] float MaxAlpha = 1f;
     [SerializeField] TextMeshProUGUI LoseText;
-    [SerializeField] bool Lost;
+    public bool Lost;
     [SerializeField] float TextSpeed;
     [SerializeField] float alphaText;
 
@@ -49,6 +49,8 @@ public class PlayerCrashScript : MonoBehaviour
             Color c = txt.color;
             c.a = alphaText;
             txt.color = c;
+
+            InvokeScene1Load();
 
 
 
@@ -106,6 +108,16 @@ public class PlayerCrashScript : MonoBehaviour
             }
         }
 
+    }
+
+    public void Scene1Load()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+    }
+
+    public void InvokeScene1Load()
+    {
+        Invoke("Scene1Load", 2f);
     }
 
 

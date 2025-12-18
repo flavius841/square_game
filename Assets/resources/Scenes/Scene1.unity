@@ -443,6 +443,7 @@ MonoBehaviour:
   axis: 0
   ScoreText: {fileID: 1213399359}
   Score: 0
+  PlayerCrashScript: {fileID: 860961110}
   CaseYDone: {fileID: 860961109}
 --- !u!1 &495272543
 GameObject:
@@ -1356,6 +1357,7 @@ GameObject:
   - component: {fileID: 860961106}
   - component: {fileID: 860961109}
   - component: {fileID: 860961110}
+  - component: {fileID: 860961111}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1469,6 +1471,7 @@ MonoBehaviour:
   axis: 1
   ScoreText: {fileID: 1213399359}
   Score: 0
+  PlayerCrashScript: {fileID: 860961110}
   CaseYDone: {fileID: 860961109}
 --- !u!114 &860961110
 MonoBehaviour:
@@ -1498,6 +1501,30 @@ MonoBehaviour:
   Lost: 0
   TextSpeed: 0.5
   alphaText: 0
+--- !u!114 &860961111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860961105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c164e70b74043022bbe6618e2e17355, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChangeColorScript
+  color1: {r: 0.09411765, g: 1, b: 0, a: 1}
+  color2: {r: 0, g: 1, b: 0.6677432, a: 1}
+  color3: {r: 0.6757673, g: 1, b: 0, a: 1}
+  color4: {r: 1, g: 0.74713236, b: 0, a: 1}
+  color5: {r: 1, g: 0, b: 0, a: 1}
+  color6: {r: 1, g: 0, b: 0.5077591, a: 1}
+  color7: {r: 0.93486977, g: 0, b: 1, a: 1}
+  color8: {r: 0.50331545, g: 0, b: 1, a: 1}
+  color9: {r: 0.040424347, g: 0, b: 1, a: 1}
+  color10: {r: 0, g: 0.63519025, b: 1, a: 1}
+  i: 1
+  colors: []
 --- !u!1 &1136946485
 GameObject:
   m_ObjectHideFlags: 0

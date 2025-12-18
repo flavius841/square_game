@@ -39,6 +39,7 @@ public class Test : MonoBehaviour
     [SerializeField] Axis axis;
     [SerializeField] TextMeshProUGUI ScoreText;
     [SerializeField] int Score;
+    public PlayerCrashScript PlayerCrashScript;
 
 
     public Test CaseYDone;
@@ -59,7 +60,7 @@ public class Test : MonoBehaviour
 
 
 
-        if (Keyboard.current.spaceKey.wasPressedThisFrame && (Done || CaseYDone.Done))
+        if (Keyboard.current.spaceKey.wasPressedThisFrame && (Done || CaseYDone.Done) && !PlayerCrashScript.Lost)
 
         {
 
