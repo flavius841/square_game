@@ -586,6 +586,7 @@ MonoBehaviour:
   ScoreText: {fileID: 1213399359}
   Score: 0
   PlayerCrashScript: {fileID: 860961110}
+  InfoTextStatus: {fileID: 420984363}
   CaseYDone: {fileID: 860961109}
 --- !u!1 &420984361
 GameObject:
@@ -1664,6 +1665,7 @@ MonoBehaviour:
   ScoreText: {fileID: 1213399359}
   Score: 0
   PlayerCrashScript: {fileID: 860961110}
+  InfoTextStatus: {fileID: 420984363}
   CaseYDone: {fileID: 860961109}
 --- !u!114 &860961110
 MonoBehaviour:

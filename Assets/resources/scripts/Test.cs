@@ -42,7 +42,7 @@ public class Test : MonoBehaviour
     // [SerializeField] bool OpenConfigDone;
     // [SerializeField] bool CloseConfigDone;
     public PlayerCrashScript PlayerCrashScript;
-    // public InfoTextScript InfoTextStatus;
+    public InfoTextScript InfoTextStatus;
 
 
     public Test CaseYDone;
@@ -104,7 +104,7 @@ public class Test : MonoBehaviour
 
 
 
-        if (Keyboard.current.spaceKey.wasPressedThisFrame && (Done || CaseYDone.Done) && !PlayerCrashScript.Lost /* && !InfoTextStatus.Opened */)
+        if (Keyboard.current.spaceKey.wasPressedThisFrame && (Done || CaseYDone.Done) && !PlayerCrashScript.Lost && !InfoTextStatus.Opened)
 
         {
 
