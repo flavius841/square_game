@@ -39,7 +39,9 @@ public class Test : MonoBehaviour
     [SerializeField] Axis axis;
     [SerializeField] TextMeshProUGUI ScoreText;
     [SerializeField] int Score;
+    [SerializeField] bool ConfigDone;
     public PlayerCrashScript PlayerCrashScript;
+    public InfoTextScript InfoTextStatus;
 
 
     public Test CaseYDone;
@@ -50,6 +52,7 @@ public class Test : MonoBehaviour
 
 
 
+
     }
 
 
@@ -57,10 +60,28 @@ public class Test : MonoBehaviour
     void Update()
 
     {
+        if (InfoTextStatus.Opened && !StartMoving && !ConfigDone)
+        {
+            Limit = -Limit / 10;
+
+            SpeedY = -SpeedY;
+
+            ConfigDone = true;
+
+            StartMoving = true;
+
+        }
+
+        if (InfoTextStatus.Opened && !StartMoving && ConfigDone && StartMoving)
+        {
+            Move();
+        }
 
 
 
-        if (Keyboard.current.spaceKey.wasPressedThisFrame && (Done || CaseYDone.Done) && !PlayerCrashScript.Lost)
+
+
+        if (Keyboard.current.spaceKey.wasPressedThisFrame && (Done || CaseYDone.Done) && !PlayerCrashScript.Lost && !InfoTextStatus.Opened)
 
         {
 
@@ -92,6 +113,7 @@ public class Test : MonoBehaviour
 
 
                     SpeedY = -SpeedY;
+
 
                     break;
 
