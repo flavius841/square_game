@@ -39,9 +39,10 @@ public class Test : MonoBehaviour
     [SerializeField] Axis axis;
     [SerializeField] TextMeshProUGUI ScoreText;
     [SerializeField] int Score;
-    [SerializeField] bool ConfigDone;
+    // [SerializeField] bool OpenConfigDone;
+    // [SerializeField] bool CloseConfigDone;
     public PlayerCrashScript PlayerCrashScript;
-    public InfoTextScript InfoTextStatus;
+    // public InfoTextScript InfoTextStatus;
 
 
     public Test CaseYDone;
@@ -60,28 +61,50 @@ public class Test : MonoBehaviour
     void Update()
 
     {
-        if (InfoTextStatus.Opened && !StartMoving && !ConfigDone)
-        {
-            Limit = -Limit / 10;
+        // if (InfoTextStatus.Opened && !StartMoving && !OpenConfigDone)
+        // {
+        //     Limit = -Limit / 10;
 
-            SpeedY = -SpeedY;
+        //     SpeedY = -SpeedY;
 
-            ConfigDone = true;
+        //     OpenConfigDone = true;
 
-            StartMoving = true;
+        //     StartMoving = true;
 
-        }
+        // }
 
-        if (InfoTextStatus.Opened && !StartMoving && ConfigDone && StartMoving)
-        {
-            Move();
-        }
+        // if (InfoTextStatus.Opened && !StartMoving && (OpenConfigDone || CloseConfigDone) && StartMoving)
+        // {
+        //     Move();
+
+        //     if (OpenConfigDone)
+        //     {
+        //         CloseConfigDone = false;
+        //     }
+
+        //     if (CloseConfigDone)
+        //     {
+        //         OpenConfigDone = false;
+        //     }
+
+        // }
+
+        // if (!InfoTextStatus.Opened && !StartMoving && !CloseConfigDone)
+        // {
+        //     Limit = -Limit * 10;
+
+        //     SpeedY = -SpeedY;
+
+        //     CloseConfigDone = true;
+
+        //     StartMoving = true;
+        // }
 
 
 
 
 
-        if (Keyboard.current.spaceKey.wasPressedThisFrame && (Done || CaseYDone.Done) && !PlayerCrashScript.Lost && !InfoTextStatus.Opened)
+        if (Keyboard.current.spaceKey.wasPressedThisFrame && (Done || CaseYDone.Done) && !PlayerCrashScript.Lost /* && !InfoTextStatus.Opened */)
 
         {
 
@@ -189,6 +212,7 @@ public class Test : MonoBehaviour
                     StartMoving = false;
 
                     Done = true;
+
 
                 }
 

@@ -585,9 +585,7 @@ MonoBehaviour:
   axis: 0
   ScoreText: {fileID: 1213399359}
   Score: 0
-  ConfigDone: 0
   PlayerCrashScript: {fileID: 860961110}
-  InfoTextStatus: {fileID: 420984363}
   CaseYDone: {fileID: 860961109}
 --- !u!1 &420984361
 GameObject:
@@ -1551,6 +1549,7 @@ GameObject:
   - component: {fileID: 860961109}
   - component: {fileID: 860961110}
   - component: {fileID: 860961111}
+  - component: {fileID: 860961112}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1664,9 +1663,7 @@ MonoBehaviour:
   axis: 1
   ScoreText: {fileID: 1213399359}
   Score: 0
-  ConfigDone: 0
   PlayerCrashScript: {fileID: 860961110}
-  InfoTextStatus: {fileID: 420984363}
   CaseYDone: {fileID: 860961109}
 --- !u!114 &860961110
 MonoBehaviour:
@@ -1709,7 +1706,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChangeColorScript
   color1: {r: 0.09411765, g: 1, b: 0, a: 1}
-  color2: {r: 0, g: 1, b: 0.6677432, a: 1}
+  color2: {r: 0.19971521, g: 0.2264151, b: 0.21878655, a: 1}
   color3: {r: 0.6757673, g: 1, b: 0, a: 1}
   color4: {r: 1, g: 0.74713236, b: 0, a: 1}
   color5: {r: 1, g: 0, b: 0, a: 1}
@@ -1720,6 +1717,24 @@ MonoBehaviour:
   color10: {r: 0, g: 0.63519025, b: 1, a: 1}
   i: 1
   colors: []
+--- !u!114 &860961112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860961105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b317072de4756ed56bdfd5dc1ece72bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InfoTextMovePlayer
+  InfoTextStatus: {fileID: 420984363}
+  PlayerCrashScript: {fileID: 860961110}
+  StartMoving: 0
+  Done: 1
+  SpeedY: 10
+  Limit: 1.9
 --- !u!1 &1136946485
 GameObject:
   m_ObjectHideFlags: 0
