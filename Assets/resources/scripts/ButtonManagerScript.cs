@@ -6,7 +6,7 @@ public class ButtonManagerScript : MonoBehaviour
 
     public void Scene1Load()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
     }
 
     public void InvokeScene1Load()
@@ -16,7 +16,7 @@ public class ButtonManagerScript : MonoBehaviour
 
     public void MenuLoad()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 
     public void InvokeMenuLoad()

@@ -112,7 +112,7 @@ public class PlayerCrashScript : MonoBehaviour
 
     public void Scene1Load()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
     }
 
     public void InvokeScene1Load()
